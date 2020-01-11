@@ -1,0 +1,63 @@
+/* header */
+
+.top-left{
+  padding: 15px;
+  background-color: lightgreen;
+}
+
+.text{
+  color: #ffffff;
+}
+
+/* form */
+
+.form{
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* todo */
+
+.todo{
+  width: 650px;
+}
+
+/* list todo */
+.flex{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* item */
+
+.item{
+  width: 500px;
+  border: 2px solid #dddddd;
+  margin-top: 1.5rem;
+}
+
+.hilang{
+  display: none;
+}
+
+/* tombol */
+
+.btn {
+  float: right;
+}
+
+/* flash tambah todo */
+.green{
+  /* text-align: center; */
+  max-width: 720px;
+  position: absolute;
+  left: 567px;
+  top: 170px;
+  z-index : 9;
+}
+

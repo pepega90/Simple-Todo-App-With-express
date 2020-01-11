@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Todos</title>
+</head>
+
+<body>
+    <div class="navbar-start top-left">
+        <h1 class="title text">Todo App</h1>
+    </div>
+    <h1 class="subtitle green" style="color: green;">{{messages.info}}</h1>
+    <h1 class="subtitle green" style="color: cadetblue;">{{messages.save}}</h1>
+    {{{body}}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/javascripts/remove.js"></script>
+    <script>
+        $(document).ready(function () {
+            const $save = $('.edit').siblings(".save");
+            const $cancel = $('.edit').siblings(".cancel");
+            const $green = $('.green');
+
+            $('.edit').on('click', function (e) {
+
+                // menampilkan input edit dan tombol save juga cancel
+                $('.input-edit').removeClass("hilang");
+                $save.removeClass("hilang");
+                $cancel.removeClass("hilang");
+
+                // menghilangkan tombol edit dan hapus
+                $('.edit').addClass("hilang");
+                $('.remove').addClass("hilang");
+            });
+
+            $cancel.on("click", function () {
+                // tampilkan tombol edit dan remove
+                $('.edit').removeClass("hilang");
+                $('.remove').removeClass("hilang");
+                // hilangkan input edit dan tombol edit dan cancel
+                $('.input-edit').addClass("hilang");
+                $save.addClass("hilang");
+                $cancel.addClass("hilang");
+            });
+
+            $green.fadeIn(500).delay(700).fadeOut(400);
+
+        });
+    </script>
+</body>
+
+</html>

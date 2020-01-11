@@ -1,0 +1,30 @@
+<form action="/addTodo" method="POST" class="form">
+  <div class="field">
+    <label class="label">Apa Yang Ingin Dilakukan Hari Ini ?</label>
+    <h1 class="title">
+      {{errorMessage}}
+    </h1>
+    <div class="control">
+      <input class="input todo" name="nama" type="text" placeholder="Text input">
+      <button class="button is-primary" type="submit">Do It!</button>
+    </div>
+  </div>
+</form>
+<div class="columns flex">
+  {{# each todo}}
+  <div class="column item">
+    <div class="ouput">
+      <p>{{this.nama}}</p>
+      <form action="/save/{{this.nama}}" method="POST">
+        <input type="text" value="{{this.nama}}" name="newTodo" class="input-edit hilang">
+    </div>
+    <div class="btn">
+      <a href="#" class="button is-danger remove" data-id="{{this._id}}">Hapus</a>
+      <button type="button" class="button is-primary edit">Edit</button>
+      <button type="submit" class="button is-info save hilang">Save</button>
+      <button class="button is-danger cancel hilang">Cancel</button>
+      </form>
+    </div>
+  </div>
+  {{/each}}
+</div>
